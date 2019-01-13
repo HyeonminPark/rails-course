@@ -4,12 +4,16 @@ body {
     background-repeat: no-repeat;
 }
 
+a i {
+    color: gray;
+}
+
 .landing {
-    margin-top: 20%;
-    margin-left: 45%;
+    margin-top: 10%;
+    margin-left: 10%;
 }
 .landing h1 {
-    font-size: 500%;
+    font-size: 400%;
     color: gray;
     margin-bottom: 0;
 }
