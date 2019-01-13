@@ -1,0 +1,29 @@
+body {
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+a i {
+    color: gray;
+}
+
+.landing {
+    margin-top: 10%;
+    margin-left: 10%;
+}
+.landing h1 {
+    font-size: 400%;
+    color: gray;
+    margin-bottom: 0;
+}
+
+input {
+    border-style: solid;
+    border-radius: 20px;
+    border-color: #F8F8FF;
+    background-color: #F8F8FF;
+    color: #696969;
+    height: 50px;
+    font-weight: bold; 
+}
