@@ -2,15 +2,48 @@ body {
     background-image: url(background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: sans-serif;
 }
 
 a i {
-    color: gray;
+    color: #FFA500;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding-right: 50px;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+li a:hover {
+    color: #FFA500; 
+}
+
+#active {
+  color: #FFA500;
+}
+#active:hover {
+    text-shadow: 0px 4px 3px gray,
+                 0px 8px 13px gray;
 }
 
 .landing {
-    margin-top: 10%;
-    margin-left: 10%;
+    margin-top: 15%;
+    margin-left: 45%;
 }
 .landing h1 {
     font-size: 400%;
@@ -26,4 +59,9 @@ input {
     color: #696969;
     height: 50px;
     font-weight: bold; 
+}
+
+#find {
+    background-color: #FFA500;
+    color: white;
 }
