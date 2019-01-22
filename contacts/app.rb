@@ -50,12 +50,12 @@ post '/contacts/edit' do
 end
 
 get '/contacts/search' do
-    @contact = Contact.where("firstname LIKE '%#{params[:search]}%' OR lastname LIKE '%#{params[:search]}%'" )
+    @contact = Contact.where("firstname LIKE ? OR lastname LIKE ?", "%#{params[:search]}%", "%#{params[:search]}%")
     erb :search
 end
 
 post '/contacts/search' do
-    contact = Contact.where("firstname LIKE '%#{params[:search]}%' OR lastname LIKE '%#{params[:search]}%'" )
+    contact = Contact.where("firstname LIKE ? OR lastname LIKE ?", "%#{params[:search]}", "%#{params[:search]}%")
     contact.firstname = params[:firstname]
     contact.lastname = params[:lastname]
     contact.phone = params[:phone]
