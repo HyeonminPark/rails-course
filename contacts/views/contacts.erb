@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <style>
+            h1 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            table, th, td {
+                margin: auto;
+                border: solid 1px black;
+                text-align: center;
+            }
+            div {
+                width: 80px;
+                margin: auto;
+                margin-bottom: 20px;
+                text-align: center;
+                background-color: black;
+
+            }
+            div a {
+                color: white;
+            }
+            form {
+                text-align: center;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>CONTACTS</h1>
+        <div>
+            <a href="/contacts/new">New</a>
+        </div>
+        <form action="/contacts/search">
+            <input type="text" name="search" placeholder="Enter the Name">
+            <input type="submit" value="Submit">
+        </form>
+      
+      
+        <table style="width:80%">
+            <tr>
+                <th>First_Name</th>
+                <th>Last_Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+            </tr>
+            <% @contacts.each do |c| %>
+                <tr>
+                    <td><%= c.firstname  %></td>
+                    <td><%= c.lastname  %></td>
+                    <td><%= c.phone  %></td>
+                    <td><%= c.email  %></td>
+                    <td><%= c.address  %></td>
+                    <td><%= c.city  %></td>
+                    <td><%= c.state  %></td>
+                    <td><%= c.zip  %></td>
+                    <td><a href="/contacts/edit?id=<%= c.id %>">Edit</a></td>
+                </tr>
+            <% end %>
+        </table>
+    </body>
+</html>
