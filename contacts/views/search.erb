@@ -1,70 +1,39 @@
-<html>
-    <head>
-        <style>
-            h1 {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-            table, th, td {
-                margin: auto;
-                border: solid 1px black;
-                text-align: center;
-            }
-            div {
-                width: 10%;
-                margin: auto;
-                margin-bottom: 20px;
-                text-align: center;
-                background-color: black;
+<div class="main">
+    <h1>CONTACTS</h1>
+</div>
 
-            }
-            div a {
-                color: white;
-                padding-right: 20px;
-            }
-            form {
-                text-align: center;
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            
-        </style>
-    </head>
-    <body>
-        <h1>CONTACTS</h1>
-        <div>
-            <a href="/contacts">Home</a>
-            <a href="/contacts/new">New</a>
-        </div>
-        <form action="/contacts/search">
-            <input type="text" name="search" placeholder="Enter the Name">
-            <input type="submit" value="Submit">
-        </form>
-      
-      
-        <table style="width:80%">
-            <tr>
-                <th>First_Name</th>
-                <th>Last_Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Address</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip</th>
-            </tr>
-            <% @contact.each do |c| %>
-                <tr>
-                    <td><%= c.firstname  %></td>
-                    <td><%= c.lastname  %></td>
-                    <td><%= c.phone  %></td>
-                    <td><%= c.email  %></td>
-                    <td><%= c.address  %></td>
-                    <td><%= c.city  %></td>
-                    <td><%= c.state  %></td>
-                    <td><%= c.zip  %></td>
-                    <td><a href="/contacts/edit?id=<%= c.id %>">Edit</a></td>
-                </tr>
-            <% end %>
-        </table>
-    </body>
+<div>
+    <a class="w3-button w3-round w3-black w3-tiny" href="/contacts">Home</a>
+    <a class="w3-button w3-round w3-black w3-tiny" href="/contacts/new">New</a>
+</div>
+<form class="contact_form" action="/contacts/search">
+    <input type="text" name="search" placeholder="Enter the Name">
+    <input type="submit" value="Submit">
+</form>
+<table class="w3-table" style="width:80%">
+    <tr  class="w3-blue" >
+        <th>First_Name</th>
+        <th>Last_Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>More</th>
+    </tr>
+    <% @contact.each do |c| %>
+        <tr>
+            <td><%= c.firstname  %></td>
+            <td><%= c.lastname  %></td>
+            <td><%= c.phone  %></td>
+            <td><%= c.email  %></td>
+            <td><%= c.address  %></td>
+            <td><%= c.city  %></td>
+            <td><%= c.state  %></td>
+            <td><%= c.zip  %></td>
+            <td ><a class="edit_key" href="/contacts/edit?id=<%= c.id %>">Edit</a></td>
+        </tr>
+    <% end %>
+</table>
+  
