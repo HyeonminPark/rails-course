@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Sans', sans-serif;
+                margin-top: 50px;
+            }
+            .main {
+                display: block;
+                width: 80%;
+                height: 80px;
+                background-image: url("https://images.unsplash.com/photo-1466096115517-bceecbfb6fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+                background-position: center;
+                background-size: cover;
+            }
+            
+            h1 {
+                text-align: center;
+                color: white;
+                font-weight: 700;
+                padding-top: 10px;
+            }
+            table {
+                margin: auto;
+            }
+            div {
+                margin: auto;
+                text-align: center;
+            }
+            .contact_form {
+                display: block;
+                width: 80%;
+                margin: 20px auto;
+            }
+            .form {
+                display: block;
+                width: 80%;
+                margin: auto;
+            }
+            .form input {
+                width: 100%;
+                margin: 5px;
+            }
+            .edit_key{
+                color: blue;
+            }
+            .edit_key:link {
+                text-decoration: none;
+            }
+            
+            .edit_key:hover {
+                background-color: blue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <%= yield %>
+    </body>
+</html>
