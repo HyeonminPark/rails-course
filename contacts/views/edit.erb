@@ -1,0 +1,16 @@
+<div class="main">
+    <h1>EDIT CONTACTS</h1>
+</div>
+
+<form class="form" action='/contacts/edit' method="post">
+    <input type="hidden" name="id" value="<%= @contact.id %>">
+    <input type="text" name="firstname" value="<%= @contact.firstname %>" placeholder="First_Name">
+    <input type="text" name="lastname" value="<%= @contact.lastname %>" placeholder="Last_Name">
+    <input type="text" name="phone" value="<%= @contact.phone %>" placeholder="Phone">
+    <input type="text" name="email" value="<%= @contact.email %>" placeholder="Email">
+    <input type="text" name="address" value="<%= @contact.address %>" placeholder="Address">
+    <input type="text" name="city" value="<%= @contact.city %>" placeholder="City">
+    <input type="text" name="state" value="<%= @contact.state %>" placeholder="State">
+    <input type="number" name="zip" value="<%= @contact.zip %>" placeholder="Zip">
+    <input type="submit" value="Save">
+</form>

@@ -1,0 +1,36 @@
+<div class="main">
+    <h1>CONTACTS</h1>
+</div>
+
+<form class="contact_form" action="/contacts/search">
+        <input type="text" name="search" placeholder="Enter the Name">
+        <input class="w3-button w3-round w3-blue w3-tiny" type="submit" value="Submit">
+        <a class="w3-button w3-round w3-black w3-tiny" href="/contacts/new">New</a>
+</form>
+
+<table class="w3-table" style="width:80%">
+    <tr class="w3-blue">
+        <th>First_Name</th>
+        <th>Last_Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+        <th>More</th>
+    </tr>
+    <% @contacts.each do |c| %>
+        <tr>
+            <td><%= c.firstname  %></td>
+            <td><%= c.lastname  %></td>
+            <td><%= c.phone  %></td>
+            <td><%= c.email  %></td>
+            <td><%= c.address  %></td>
+            <td><%= c.city  %></td>
+            <td><%= c.state  %></td>
+            <td><%= c.zip  %></td>
+            <td><a class="edit_key" href="/contacts/edit?id=<%= c.id %>">Edit</a></td>
+        </tr>
+    <% end %>
+</table>
