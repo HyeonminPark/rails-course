@@ -1,0 +1,17 @@
+<form action="/students" method="post">
+    <div>
+        <input type="text" name="first_name" placeholder="First Name">
+    </div>
+    <div>
+        <input type="text" name="last_name" placeholder="Last Name">
+    </div>
+    <div>
+        <input type="text" name="picture" placeholder="Picture">
+    </div>
+    <div>
+      <%= select_tag 'course_id', options_from_collection_for_select(@courses, :id, :name) %>
+    </div>
+    <div>
+        <input type="submit" value="Save">
+    </div>
+</form>
