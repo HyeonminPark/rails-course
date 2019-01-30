@@ -1,0 +1,17 @@
+<a href="/students/new">New Student</a>
+
+<% @students.each do |student| %>
+    <div>
+        <%= student.picture %>
+        <%= student.first_name %>
+        <%= student.last_name %>
+        <%= student.course.name %>
+    </div>
+    <div>
+        <a href="/students/edit?id=<%=student.id%>">Edit</a>
+        <a href="/students/delete?id=<%= student.id %>">Delete</a>
+    </div>
+<% end %>
+
+
+
