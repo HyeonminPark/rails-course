@@ -1,0 +1,22 @@
+<form action="/students/edit" method="post">
+    <input type="hidden" name="id" value="<%= @student.id %>">
+    <div>
+        <input type="text" name="first_name" value="<%= @student.first_name %>" placeholder="First Name">
+    </div>
+    <div>
+        <input type="text" name="last_name" value="<%= @student.last_name %>" placeholder="Last Name">
+    </div>
+    <div>
+        <input type="text" name="picture" value="<%= @student.picture %>" placeholder="Picture">
+    </div>
+    <div>
+        <select name="course_id" value="<%= @student.course_id %>">
+            <% @courses.each do |course| %>
+                <option value="<%= course.id %>"><%= course.name %></option>
+            <% end %>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Save">
+    </div>
+</form>
