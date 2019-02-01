@@ -1,0 +1,22 @@
+<div class="container new-button">
+    <a class="btn btn-primary btn-lg" href="/guests/new">New</a>
+</div>
+
+<div class="container">
+    <div class="card-columns">
+        <% @guests.each do |guest| %>
+        <div class="card text-center">
+            <div class="card-body">
+                <img class="rounded-circle" src="<%= guest.picture %>">
+                <h4><%= guest.name %></h4>
+                <h4><%= guest.email %></h4>
+                <h4>Host: <%= guest.host.title %></h4>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-success btn-sm" href='/guests/edit?id=<%=guest.id%>'>Edit</a>
+                <a class="btn btn-danger btn-sm" href='/guests/delete?id=<%=guest.id%>'>Delete</a>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>

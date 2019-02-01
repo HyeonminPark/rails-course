@@ -1,0 +1,33 @@
+<div class="guests container">
+    <h1>Edit Form</h1>
+</div>
+<div class="container">
+<form action='/guests/edit' method='post'>
+    <div class="form-group">
+       <input type='hidden' name='id' value="<%= @guest.id %>"> 
+    </div>
+    <div class="form-group">
+       <input type='text' name='picture' value="<%=@guest.picture%>" placeholder="Picture"> 
+    </div>
+    <div class="form-group">
+        <input type='text' name='name' value="<%=@guest.name%>" placeholder="Name">
+    </div>
+    <div class="form-group">
+       <input type='text' name='email'  value="<%=@guest.email%>" placeholder="Email"> 
+    </div>
+    <div class="form-group">
+        <select name="host_id">
+           <% @host.each do |host| %>
+               <option value="<%= host.id %>">
+                   <%= host.title %>
+                   <%= host.name %>
+                   <%= host.email %>
+               </option>
+           <% end %>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type='submit' value='Save'>
+    </div>
+</form>
+</div>

@@ -1,0 +1,32 @@
+<div class="show-card">
+    <div>
+        <h4><%= @host.title %></h4>
+        <h6><%= @host.name %></h6>
+        <h6><%= @host.email %></h6>
+        <h6><%= @host.date %></h6>
+        <h6><%= @host.location %></h6>
+        <p><%= @host.description %></p>
+        <p><%= @host.picture %></p>
+    </div>
+
+</div>
+<div class="guests container">
+    <h5>GUESTS</h5>
+</div>
+
+<div class="container">
+    <div class="card-deck">
+        <% @host.guests.each do |guest| %>
+        <div class="card">
+            <div class="card-body">
+                <img class="rounded-circle" src="<%= guest.picture %>">
+                <p class="card-title text-center"><%= guest.name %></p>
+                <p class="card-title text-center"><%= guest.email %></p>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+
+
