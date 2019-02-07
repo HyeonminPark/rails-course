@@ -7,9 +7,52 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
+  <style>
+  
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .jumbotron {
+      text-align: center;
+      background-color: #e5e6e7;
+    }
+    .jumbotron h1 {
+      font-size: 3em;
+    }
+    .container {
+      text-align: center;
+    }
+ 
+    .content {
+      text-align: center;
+      border: 0.5px solid #e5e6e7;
+      border-radius: 10px;
+      margin: 10px auto 10px 1px;
+      padding: 10px;
+    }
+    .show {
+      color: #ffa202;
+      padding-left: 10px;
+    }
+    footer {
+      background-color: red;
+    }
+    
+    footer p {
+      float: right;
+    }
+
+    </style>
 
   <body>
     <%= yield %>
   </body>
+  
+  <footer>
+    <p>copyright</p>
+  </footer>
 </html>
