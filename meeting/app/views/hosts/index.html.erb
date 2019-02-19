@@ -1,0 +1,26 @@
+<div class="container new-button">
+    <a class="btn btn-primary btn-lg" href="/hosts/new">New</a>
+</div>
+
+<div class="container">
+    <div class="card-deck">
+    <% @hosts.each do |host| %>
+        <div class="card text-center">
+            <div class="card-body">
+                <h4><%= host.title %></h4>
+                <h6><%= host.name %></h6>
+                <h6><%= host.email %></h6>
+                <h6><%= host.date %></h6>
+                <h6><%= host.location %></h6>
+                <p><%= host.description %></p>
+                <p><%= host.picture %></p>
+                <a class="btn btn-info btn-sm" href='/hosts/show?id=<%=host.id%>'>Show</a>
+                <a class="btn btn-success btn-sm" href='/hosts/edit?id=<%=host.id%>'>Edit</a>
+                <a class="btn btn-danger btn-sm" href='/hosts/delete?id=<%=host.id%>'>Delete</a>
+                
+            </div>
+         </div>
+    <% end %>
+    </div>
+</div>
+        
