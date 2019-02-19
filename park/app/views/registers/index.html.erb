@@ -1,0 +1,40 @@
+<%= link_to 'New', new_register_path %>
+
+<div class="container">
+<% @registers.each do |register| %>
+  <div>
+    <%= image_tag register.picture, width: 50, height: 50 %>
+  </div>
+  <div>
+    <%= register.first_name %>
+  </div>
+  <div>
+    <%= register.last_name %>
+  </div>
+  <div>
+    <%= register.phone %>
+  </div>
+  <div>
+    <%= register.street_address %>
+  </div>
+  <div>
+    <%= register.city %>
+  </div>
+   <div>
+    <%= register.state %>
+  </div>
+   <div>
+    <%= register.country %>
+  </div>
+  <div>
+    <%= register.zip %>
+  </div>
+  <div>
+    <%= register.name %>
+  </div>
+  <div>
+    <%= link_to 'Edit', edit_register_path %>
+  </div>
+<% end %>
+</div>
+

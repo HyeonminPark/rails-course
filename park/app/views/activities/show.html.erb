@@ -1,0 +1,52 @@
+<%= link_to 'Register', new_register_path %>
+
+<div class="container">
+    <div>
+        <%= image_tag @activity.picture %>
+    </div>
+    <div>
+        <%= @activity.name %>
+    </div>
+    <div>
+        <%= @activity.instrutor%>
+    </div>
+    <div>
+        <%= @activity.time %> <%= @activity.price %>
+    </div>
+    <div>
+        <%= @activity.description %>
+    </div>
+</div>
+
+<% @activity.registers.each do |activity| %>
+  <div>
+    <%= activity.first_name %>
+  </div>
+  <div>
+    <%= activity.last_name %>
+  </div>
+  <div>
+    <%= activity.phone %>
+  </div>
+  <div>
+    <%= activity.street_address %>
+  </div>
+  <div>
+    <%= activity.city %> 
+  </div>
+  <div>
+    <%= activity.state %> 
+  </div>
+  <div>
+    <%= activity.country %>
+  </div>
+  <div>
+    <%= activity.zip %> 
+  </div>
+  <div>
+    <%= activity.picture %> 
+  </div>
+  <div>
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>

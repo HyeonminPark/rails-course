@@ -1,0 +1,26 @@
+// Place all the styles related to the Activities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.landing {
+  background-image: url(https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1008&q=80);
+  position: relative;
+  opacity: 2;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 600px;
+  background-size: cover;
+}
+
+
+
+.land {
+    padding-top: 200px;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: 0px 4px 3px #D46A6A,
+                 0px 8px 13px #D46A6A;
+}

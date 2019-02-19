@@ -1,0 +1,40 @@
+<%= link_to 'Park', campgrounds_path %>
+<%= link_to 'New Activity', new_activity_path %>
+
+<div class="container">
+  <div>
+      <%= image_tag @campground.picture, width: '100%' %>
+  </div>
+  <div>
+      <%= @campground.name %>
+  </div>
+  <div>
+      <%= @campground.description %>
+  </div>
+</div>
+
+<div class="container">
+<div class="row">
+    <% @campground.activities.each do |activity| %>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-img-top">
+                    <%= image_tag activity.picture, width: '100%' %>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center"><%= activity.name %></h6>
+                    <h6 class="card_subtitle text-center">Instructor: <%= activity.instrutor %></h6>
+                    <p class="card_subtitle text-center">Time: <%= activity.time %>, Price: <%= activity.price %></p>
+                    <div class="card-text">
+                        <p><%= activity.description %></p>
+                    </div>
+                    <div>
+                        <%= link_to 'Edit', edit_activity_path(activity) %>
+                        <%= link_to 'Show', activity_path(activity) %>
+                    </div>
+                </div>
+            </div>
+         </div>
+    <% end %>
+</div>
+</div>

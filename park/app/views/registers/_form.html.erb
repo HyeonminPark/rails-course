@@ -1,0 +1,32 @@
+<%= form_for @register do |f| %>
+  <div>
+    <%= f.text_field :first_name, placeholder: 'First Name' %>
+  </div>
+  <div>
+    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+  </div>
+  <div>
+    <%= f.text_field :phone, placeholder: 'Phone Number' %>
+  </div>
+  <div>
+    <%= f.text_field :street_address, placeholder: 'Street Address' %>
+  </div>
+  <div>
+    <%= f.text_field :city, placeholder: 'City' %> 
+  </div>
+  <div>
+    <%= f.text_field :state, placeholder: 'State' %> 
+  </div>
+  <div>
+    <%= f.text_field :country, placeholder: 'country' %>
+  </div>
+  <div>
+    <%= f.number_field :zip, placeholder: 'Zip Code' %> 
+  </div>
+  <div>
+    <%= f.text_field :picture, placeholder: 'Picture' %> 
+  </div>
+  <div>
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>

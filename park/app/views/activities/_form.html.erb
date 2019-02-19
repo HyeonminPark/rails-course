@@ -1,0 +1,23 @@
+<%= form_for @activity do |f| %>
+    <div>
+        <%= f.text_field :picture, placeholder: 'Picture' %>
+    </div>
+    <div>
+        <%= f.text_field :name, placeholder: 'Name' %>
+    </div>
+    <div>
+        <%= f.text_field :instrutor, placeholder: 'Instructor' %>
+    </div>
+    <div>
+        <%= f.text_field :time, placeholder: 'Time' %> <%= f.text_field :price, placeholder: 'Price' %>
+    </div>
+    <div>
+        <%= f.text_field :description, placeholder: 'Description' %>
+    </div>
+    <div>
+        <%= f.select :campground_id, options_from_collection_for_select(@campgrounds, :id, :name) %>
+    </div>
+    <div>
+        <%= f.submit 'Save' %>
+    </div>
+<% end %>

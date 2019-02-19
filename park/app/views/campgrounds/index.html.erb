@@ -1,0 +1,54 @@
+<div class="landing">
+  <div class="nav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path %> 
+            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <% else %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+  <div class="land text-center">
+    <p>Explore Nature</p>
+  </div>
+</div>
+  
+<%= link_to 'New', new_campground_path %>
+
+<div class="container">
+<div class="row">
+    <% @campgrounds.each do |camp| %>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-img-top">
+                    <%= image_tag camp.picture, width: '100%', height: 200 %>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title text-center"><%= camp.name %></h6>
+                    <p class="card_subtitle text-center">
+                        <%= camp.zip %> <%= camp.address %> <%= camp.city %> <%= camp.state %> <%= camp.country %>
+                    </p>
+                    <div class="card-text">
+                        <p><%= camp.description %></p>
+                    </div>
+                    <div>
+                        <%= link_to 'Edit', edit_campground_path(camp) %>
+                        <%= link_to 'Show', campground_path(camp) %>
+                    </div>
+                </div>
+            </div>
+         </div>
+    <% end %>
+</div>
+</div>
