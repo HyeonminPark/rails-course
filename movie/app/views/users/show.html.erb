@@ -1,0 +1,36 @@
+<div class="jumbotron">
+    <h1><%=@user.first_name %> <%=@user.last_name%> Movies</h1>
+    <br>
+    <h4><%= link_to 'Home', users_path, {:class => 'btn btn-primary'} %></h4>
+</div>
+
+<div class="container">
+<div class='row'>
+<% @user.films.each do |film| %>
+<div class="col-sm-12 col-md-4 col-lg-2 content">
+    <div>
+        <h5><%= film.title %></h5>
+    </div>
+    <div>
+        <img src="<%= film.picture %>" width="150" height="200">
+    </div>
+</div>
+<% end %>
+</div>
+</div>
+
+<div class="container">
+    <h5>Add watched Movie</h5>
+</div>
+<div class="container">
+    <div class="form-group">
+        <%= form_tag '/users/add_film' do %>
+        <%= hidden_field_tag 'user_id', @user.id %>
+        <%= select_tag 'film_id', options_from_collection_for_select(@films, :id, :title) , :class =>'form-control' %>
+    </div>
+    <div>  
+        <%= submit_tag 'Add', :class => 'form-control btn-primary'%>
+    </div> 
+    <% end %>
+    </div>
+</div>
