@@ -1,40 +1,51 @@
 <%= link_to 'New', new_register_path %>
 
 <div class="container">
-<% @registers.each do |register| %>
-  <div>
-    <%= image_tag register.picture, width: 50, height: 50 %>
-  </div>
-  <div>
-    <%= register.first_name %>
-  </div>
-  <div>
-    <%= register.last_name %>
-  </div>
-  <div>
-    <%= register.phone %>
-  </div>
-  <div>
-    <%= register.street_address %>
-  </div>
-  <div>
-    <%= register.city %>
-  </div>
-   <div>
-    <%= register.state %>
-  </div>
-   <div>
-    <%= register.country %>
-  </div>
-  <div>
-    <%= register.zip %>
-  </div>
-  <div>
-    <%= register.name %>
-  </div>
-  <div>
-    <%= link_to 'Edit', edit_register_path %>
+<div class="row">
+<% @registers.each do |register| %> 
+  <div class="col-sm-4">
+      <table class="text-center table-bordered">
+        <tr>
+          <th>First Name</th>
+          <td><%= register.first_name %></td>
+        </tr>
+        <tr>
+          <th>Last Name</th>
+          <td><%= register.last_name %></td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td><%= register.phone %></td>
+        </tr>
+        <tr>
+          <th>Adress</th>
+          <td><%= register.street_address %></td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td><%= register.city %></td>
+        </tr>
+        <tr>
+          <th>State</th>
+          <td><%= register.state %></td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td><%= register.country %></td>
+        </tr>
+        <tr>
+          <th>Zip</th>
+          <td><%= register.zip %></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= link_to 'Show', register_path(register) %>
+            <%= link_to 'Delete', register_path(register), method: :delete %>
+          </td>
+        </tr>
+      </table>
   </div>
 <% end %>
+</div>
 </div>
 

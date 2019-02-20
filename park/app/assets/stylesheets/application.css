@@ -14,3 +14,34 @@
  *= require_self
  */
 
+.user {
+    color: blue;
+    float: left;
+    margin-right: 20px;
+}
+
+li a {
+    margin-right: 20px;
+    color: #105F25;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 50px;
+   width: 100%;
+   background-color: #D46A6A;
+   color: white;
+   text-align: center;
+   margin-top: 20px;
+}
+.footer p {
+    padding-top: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+

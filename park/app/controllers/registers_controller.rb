@@ -2,17 +2,22 @@ class RegistersController < ApplicationController
  before_action :authenticate_user!
  
   def index
-    @registers = Register.all
-    
+    @registers = Register.where(user_id: current_user.id)
+  end
+  
+  def show
+    @register = Register.find(params[:id])
+    @activities = Activity.all
   end
   
   def new
     @register = Register.new
+    @activities = Activity.all
   end
   
   def create
     register = Register.new
-    register.user_id = params[:register][:user_id]
+    register.user_id = current_user.id
     register.first_name = params[:register][:first_name]
     register.last_name = params[:register][:last_name]
     register.phone = params[:register][:phone]
@@ -33,7 +38,7 @@ class RegistersController < ApplicationController
   
   def update
     register = Register.find(params[:id])
-    register.user_id = params[:register][:user_id]
+    register.user_id = current_user.id
     register.first_name = params[:register][:first_name]
     register.last_name = params[:register][:last_name]
     register.phone = params[:register][:phone]
@@ -47,10 +52,18 @@ class RegistersController < ApplicationController
     redirect_to registers_path
   end
   
-  def delete
+  def destroy
     register = Register.find(params[:id])
     register.destroy
     redirect_to registers_path
   end
   
+  def add_activity
+    register = Register.find(params[:register_id])
+    register_activity = RegisterActivity.new
+    register_activity.register_id = params[:register_id]
+    register_activity.activity_id = params[:activity_id]
+    register_activity.save
+    redirect_to registers_path(register)
+  end
 end

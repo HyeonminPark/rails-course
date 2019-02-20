@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   
   resources :campgrounds
   resources :activities
-  resources :registers do 
-    member do
-      post 'list'
-    end
-  end
+  resources :registers
+  
+  post 'registers/add_activity' => 'registers#add_activity'
+
 end

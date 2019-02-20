@@ -1,19 +1,37 @@
-<%= link_to 'Park', campgrounds_path %>
-<%= link_to 'New Activity', new_activity_path %>
-
 <div class="container">
-  <div>
-      <%= image_tag @campground.picture, width: '100%' %>
-  </div>
-  <div>
-      <%= @campground.name %>
-  </div>
-  <div>
-      <%= @campground.description %>
+  <div class="jum jumbotron">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag @campground.picture, width: "100%", height: "100%"%>
+      </div>
+      <div class="col-sm-6 text-center">
+        <div>
+          <h1><%= @campground.name %></h1>
+        </div>
+        <div>
+          <p><%= @campground.description %></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
+
 <div class="container">
+  <div class="jumbotron">
+   <h1>Activity Lists</h1>
+  </div>
+</div>
+
+<div class="parks container">
+  <div>
+    <%= link_to 'Park', campgrounds_path, :class => "btn btn-primary" %>
+    <%= link_to 'New Activity', new_activity_path, :class => "btn btn-info" %>
+  </div>
+</div>
+
+
+<div class="park container">
 <div class="row">
     <% @campground.activities.each do |activity| %>
         <div class="col-sm-3">
