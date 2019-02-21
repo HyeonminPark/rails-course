@@ -44,7 +44,7 @@ class CampgroundsController < ApplicationController
     redirect_to campgrounds_path
   end
   
-  def delete
+  def destroy
     campground = Campground.find(params[:id])
     campground.destroy
     redirect_to campgrounds_path

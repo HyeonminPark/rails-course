@@ -14,6 +14,10 @@
  *= require_self
  */
 
+nav {
+    background-color: #e69c83; 
+}
+
 .user {
     color: blue;
     float: left;
@@ -22,26 +26,33 @@
 
 li a {
     margin-right: 20px;
-    color: #105F25;
+    color: white;
 }
 
-.footer {
-   position: fixed;
+footer {
+   display: block;
+    position: fixed;
    left: 0;
    bottom: 0;
    height: 50px;
    width: 100%;
-   background-color: #D46A6A;
+   background-color: #e69c83;
    color: white;
    text-align: center;
    margin-top: 20px;
+   
 }
-.footer p {
+
+footer p {
     padding-top: 10px;
 }
 
-a {
+nav a {
     text-decoration: none;
+}
+
+.sign {
+    margin-top: 150px;
 }
 
 

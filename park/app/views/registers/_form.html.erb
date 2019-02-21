@@ -1,32 +1,40 @@
+<div class="form container">
+  
+<div class="form_area jumbotron">
+  <p>FORM</p>
+</div>
+
+<div class="jumbotron">
 <%= form_for @register do |f| %>
-  <div>
-    <%= f.text_field :first_name, placeholder: 'First Name' %>
+  <div class="form-group">
+    <%= f.text_field :first_name, placeholder: 'First Name', :class => "form-control" %>
   </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: 'Last Name' %>
+  <div class="form-group">
+    <%= f.text_field :last_name, placeholder: 'Last Name', :class => "form-control" %>
   </div>
-  <div>
-    <%= f.text_field :phone, placeholder: 'Phone Number' %>
+  <div class="form-group">
+    <%= f.text_field :phone, placeholder: 'Phone Number', :class => "form-control" %>
   </div>
-  <div>
-    <%= f.text_field :street_address, placeholder: 'Street Address' %>
+  <div class="form-group">
+    <%= f.text_field :street_address, placeholder: 'Street Address', :class => "form-control" %>
   </div>
-  <div>
-    <%= f.text_field :city, placeholder: 'City' %> 
+  <div class="form-group">
+    <%= f.text_field :city, placeholder: 'City', :class => "form-control" %> 
   </div>
-  <div>
-    <%= f.text_field :state, placeholder: 'State' %> 
+  <div class="form-group">
+    <%= f.text_field :state, placeholder: 'State', :class => "form-control" %> 
   </div>
-  <div>
-    <%= f.text_field :country, placeholder: 'country' %>
+  <div class="form-group">
+    <%= f.text_field :country, placeholder: 'country', :class => "form-control" %>
   </div>
-  <div>
-    <%= f.number_field :zip, placeholder: 'Zip Code' %> 
+  <div class="form-group">
+    <%= f.number_field :zip, placeholder: 'Zip Code', :class => "form-control" %> 
   </div>
-  <div>
-    <%= f.text_field :picture, placeholder: 'Picture' %> 
+  <div class="form-group">
+    <%= f.text_field :picture, placeholder: 'Picture', :class => "form-control" %> 
   </div>
-  <div>
-    <%= f.submit 'Save' %>
+  <div class="form-group">
+    <%= f.submit 'Save', :class => "btn btn-primary form-control" %>
   </div>
 <% end %>
+</div>

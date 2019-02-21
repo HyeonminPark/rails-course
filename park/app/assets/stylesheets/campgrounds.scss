@@ -10,14 +10,12 @@
   background-position: bottom;
   background-repeat: no-repeat;
   width: 100%;
-  min-height: 600px;
+  min-height: 650px;
   background-size: cover;
 }
 
-
-
 .land {
-    padding-top: 200px;
+    padding-top: 230px;
     color: white;
     font-size: 80px;
     font-weight: bold;
@@ -60,8 +58,14 @@
   background-color:transparent !important;
   margin-top: 20px;
 }
+.jum {
+  margin-top: 100px;
+}
 
 a {
     text-decoration: none;
 }
 
+.card {
+  margin-bottom: 10px;
+}

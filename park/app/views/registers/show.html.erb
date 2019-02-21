@@ -1,6 +1,18 @@
-<div class="container">
-<div class="row">
-  <div class="col-sm-7">
+<div class="register container">
+  <div class="jumbotron text-center">
+    <h1>My Activities</h1>
+  </div>
+  <div class="form-inline justify-content-end">
+      <%= form_tag '/registers/add_activity' do %>
+        <%= hidden_field_tag 'register_id', @register.id %>
+        <div class="form-inline">
+          <%= select_tag 'activity_id', options_from_collection_for_select(@activities, :id, :name), class: "form-control" %>
+          <%= submit_tag 'Add', class: "form-control"%>
+        </div>
+      <% end %>
+  </div>
+  <div class="row">
+    <div class="col-3">
       <table class="text-center table-bordered">
         <tr>
           <th>First Name</th>
@@ -35,19 +47,23 @@
           <td><%= @register.zip %></td>
         </tr>
       </table>
-  </div>
-    <div class="col-sm-5">
+    </div>
+    <div class="col-9">
+      <div class="row">
       <% @register.activities.each do |activity| %>
-        <%= activity.name %>
-        <%= image_tag activity.picture, width: 100, height: 100 %>    
-      <% end %>
-      <br>
-      <%= form_tag '/registers/add_activity' do %>
-          <%= hidden_field_tag 'register_id', @register.id %>
-          <%= select_tag 'activity_id', options_from_collection_for_select(@activities, :id, :name) %>
-          <%= submit_tag 'Add' %>
+      <div class="col-4">
+        <div class="card text-center">
+          <div class= "card-img-top">
+            <%= image_tag activity.picture, width: "100%", height: 150, class: "rounded mx-auto d-block" %> 
+          </div>
+          <div class="card-body">
+             <%= activity.name %>
+          </div>
+        </div> 
+      </div>
       <% end %>
     </div>
+    </div> 
   </div>
 </div>
 

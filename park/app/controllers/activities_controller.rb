@@ -45,7 +45,7 @@ class ActivitiesController < ApplicationController
     redirect_to campgrounds_path
   end
   
-  def delete
+  def destroy
     activity = Activity.find(params[:id])
     activity.destroy
     redirect_to campgrounds_path

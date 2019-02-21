@@ -5,12 +5,10 @@
 </div>
 
 <div class="container">
-  <div class="jumbotron">
-   <h1>Parks Lists</h1>
+  <div class="jumbotron text-center">
+   <h1>EXPLORE PARKS</h1>
   </div>
 </div>
-
-
 
 <div class="parks container">
   <div class="park_new">
@@ -19,22 +17,23 @@
 
   <div class="park row">
     <% @campgrounds.each do |camp| %>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
             <div class="card">
-                <div class="card-img-top">
+                <div class="card-img-top img-thumbnail mx-auto">
                     <%= image_tag camp.picture, width: '100%', height: 200 %>
                 </div>
                 <div class="card-body">
                     <h6 class="card-title text-center"><%= camp.name %></h6>
                     <p class="card_subtitle text-center">
-                      <%= camp.address %> <%= camp.city %> <%= camp.state %> <%= camp.country %>
+                      <%= camp.address %> <%= camp.city %> <%= camp.state %>
                     </p>
-                    <div class="card-text">
-                        <p><%= camp.description %></p>
-                    </div>
+                    <p class="card_subtitle text-center">
+                      <%= camp.country %>
+                    </p>
                     <div>
                         <%= link_to '', edit_campground_path(camp), :class => "fas fa-pen-nib fa-xm" %> |
-                        <%= link_to '', campground_path(camp), :class => "fas fa-search fa-xm" %>
+                        <%= link_to '', campground_path(camp), :class => "fas fa-search fa-xm" %> |
+                        <%= link_to '', campground_path(camp), method: :delete, :class => "fas fa-trash-alt fa-xm" %>
                     </div>
                 </div>
             </div>
