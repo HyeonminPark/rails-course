@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="jum">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag @campground.picture, width: "100%", height: "100%", class: "rounded"%>
+      </div>
+      <div class="col-sm-6">
+        <div class="text-center">
+          <h1><%= @campground.name %></h1>
+        </div>
+        <div>
+          <p><%= @campground.description %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="jumbotron">
+   <h1>Activity Lists</h1>
+  </div>
+</div>
+
+<div class="parks container">
+  <div>
+    <%= link_to 'Park', campgrounds_path, :class => "btn btn-primary" %>
+    <%= link_to 'New Activity', new_activity_path, :class => "btn btn-info" %>
+  </div>
+</div>
+
+
+<div class="park container">
+<div class="row">
+    <% @campground.activities.each do |activity| %>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-img-top">
+                    <%= image_tag activity.picture, width: '100%', height: 150 %>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-center"><%= activity.name %></h6>
+                    <h6 class="card_subtitle text-center">Instructor: <%= activity.instrutor %></h6>
+                    <p class="card_subtitle text-center">Time: <%= activity.time %>, Price: <%= activity.price %></p>
+                    <div>
+                        <%= link_to '', edit_activity_path(activity), :class => "fas fa-pen-nib fa-xm" %> |
+                        <%= link_to '', activity_path(activity), :class => "fas fa-search fa-xm" %> |
+                        <%= link_to '', activity_path(activity), method: :delete, :class => "fas fa-trash-alt fa-xm" %>
+                    </div>
+                </div>
+            </div>
+         </div>
+    <% end %>
+</div>
+</div>

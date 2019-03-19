@@ -1,0 +1,25 @@
+<%= link_to 'New', new_activity_path %>
+
+<div class="row">
+    <% @activities.each do |activity| %>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-img-top">
+                    <%= image_tag activity.picture, width: '100%' %>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title text-center"><%= activity.name %></h6>
+                    <h6 class="card_subtitle text-center"><%= activity.instrutor %></h6>
+                    <h6 class="card_subtitle text-center"><%= activity.time %>, <%= activity.price %></h6>
+                    <div class="card-text">
+                        <p><%= activity.description %></p>
+                    </div>
+                    <div>
+                        <%= link_to '', edit_activity_path(activity), :class => "fas fa-pen-nib fa-xm" %> |
+                        <%= link_to '', activity_path(activity), :class => "fas fa-search fa-xm"  %>
+                    </div>
+                </div>
+            </div>
+         </div>
+    <% end %>
+</div>

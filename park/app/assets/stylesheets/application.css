@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+
+nav {
+    background-color: #e69c83; 
+}
+
+.user {
+    color: blue;
+    float: left;
+    margin-right: 20px;
+}
+
+li a {
+    margin-right: 20px;
+    color: white;
+}
+
+footer {
+   display: block;
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 50px;
+   width: 100%;
+   background-color: #e69c83;
+   color: white;
+   text-align: center;
+   margin-top: 20px;
+   
+}
+
+footer p {
+    padding-top: 10px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.sign {
+    margin-top: 150px;
+}
+
+

@@ -1,0 +1,55 @@
+<%= link_to 'Register', new_register_path %>
+
+<div class="container">
+  <div class="jum">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag @activity.picture,  width: "100%", height: "100%", class: "rounded" %>
+      </div>
+      <div class="col-sm-6">
+        <div class="text-center">
+          <h1><%= @activity.name %></h1>
+        </div>
+        <div class="text-center">
+          <h3>Instructor: <%= @activity.instrutor%></h3>
+        </div>
+        <div class="text-center">
+          <h6><%= @activity.time %>, $ <%= @activity.price %></h6>
+        </div>
+        <div>
+          <p><%= @activity.description %></p>
+        </div>
+        <div>
+          <%= link_to 'Register', new_register_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<div class="container">
+<% @activity.registers.each do |activity| %>
+  <table class="list table">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone</th>
+      <th>Street Address</th>
+      <th>City</th>
+      <th>state</th>
+      <th>Country</th>
+      <th>Zip</th>
+    </tr>
+    <tr>
+      <td><%= activity.first_name %></td>
+      <td><%= activity.last_name %></td>
+      <td><%= activity.phone %></td>
+      <td><%= activity.street_address %></td>
+      <td><%= activity.city %></td>
+      <td><%= activity.state %></td>
+      <td><%= activity.country %></td>
+      <td><%= activity.zip %></td>
+    </tr>
+<% end %>
+</div>

@@ -1,0 +1,57 @@
+<div class="register container">
+<div class="jumbotron text-center">
+  <h1>Registered People</h1>
+</div>
+<div class="container">
+<%= link_to 'New', new_register_path, class: "btn btn-primary" %>
+<br>
+<br>
+<div class="row">
+<% @registers.each do |register| %> 
+  <div class="col-sm-4">
+      <table class="text-center table-bordered">
+        <tr>
+          <th>First Name</th>
+          <td><%= register.first_name %></td>
+        </tr>
+        <tr>
+          <th>Last Name</th>
+          <td><%= register.last_name %></td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td><%= register.phone %></td>
+        </tr>
+        <tr>
+          <th>Adress</th>
+          <td><%= register.street_address %></td>
+        </tr>
+        <tr>
+          <th>City</th>
+          <td><%= register.city %></td>
+        </tr>
+        <tr>
+          <th>State</th>
+          <td><%= register.state %></td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td><%= register.country %></td>
+        </tr>
+        <tr>
+          <th>Zip</th>
+          <td><%= register.zip %></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <%= link_to '', register_path(register), :class => "fas fa-search fa-xm" %> |
+            <%= link_to '', edit_register_path(register), :class => "fas fa-pen-nib fa-xm" %> |
+            <%= link_to '', register_path(register), method: :delete, :class => "fas fa-trash-alt fa-xm" %>
+          </td>
+        </tr>
+      </table>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
