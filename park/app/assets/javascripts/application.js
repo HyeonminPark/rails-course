@@ -14,3 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+function comment() {
+    var x = document.getElementById("content").value;
+    document.getElementById("review").innerHTML = x;
+}
