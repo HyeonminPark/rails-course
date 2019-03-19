@@ -1,0 +1,33 @@
+<%= link_to 'Park', parks_path %>
+
+<div class="jumbotron">
+    <div>
+        <%= image_tag @park.picture, width: '100%' %>
+    </div>
+    <div>
+        <%= @park.name %>
+    </div>
+</div>
+
+<div class="row">
+    <% @park.campsites.each do |campsite| %>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-img-top">
+                    <%= image_tag campsite.picture, width: '100%' %>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title text-center"><%= campsite.name %></h6>
+                    <h6 class="card_subtitle text-center">Location: <%= campsite.location %></h6>
+                    <div class="card-text">
+                        <p><%= campsite.description %></p>
+                    </div>
+                    <div>
+                        <%= link_to 'Edit', edit_campsite_path(campsite) %>
+                        <%= link_to 'Show', campsite_path(campsite) %>
+                    </div>
+                </div>
+            </div>
+         </div>
+    <% end %>
+</div>

@@ -1,17 +1,15 @@
-<%= link_to 'New', new_park_path %>
 
 <div class="row">
-    <% @parks.each do |park| %>
+    <% @reviews.each do |park| %>
         <div class="col-sm-3">
             <div class="card">
                 <div class="card-img-top">
                     <%= image_tag park.picture, width: '100%' %>
                 </div>
                 <div class="card-body">
-                    <h6 class="card-title text-center"><%= park.name %></h6>
-                    <h6 class="card_subtitle text-center"><%= park.state %>, <%= park.country %></h6>
+                   
                     <div class="card-text">
-                        <p><%= park.description %></p>
+                        <p><%= park.comment %></p>
                     </div>
                     <div>
                         <%= link_to 'Edit', edit_park_path(park) %>

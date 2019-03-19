@@ -1,7 +1,12 @@
 class ParksController < ApplicationController
+    before_action :authenticate_user!, except: [:index, :show]
     
     def index
         @parks = Park.all
+    end
+    
+    def show
+        @park = Park.find(params[:id])
     end
     
     def new
